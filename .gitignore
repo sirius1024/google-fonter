@@ -35,6 +35,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+src/node_modules/
+src/google-fonter-win32-x64/
+build/
 
 # Typescript v1 declaration files
 typings/
