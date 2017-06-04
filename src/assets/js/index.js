@@ -63,6 +63,9 @@ btnLocal.addEventListener('click', (e) => {
             let cssName = cssNameReg.exec(rst.frontCss)[1] //| "fontMain";
             cssName = cssName.replace(/\s/g, '') + ".css";
             return new Promise((resolve, reject) => {
+                rst.woffs.forEach(woff => {
+                    rst.frontCss = rst.frontCss.replace(woff, './' + (woff.match(/[A-Za-z0-9_-]+\.woff2*/i)[0]).toString());
+                })
                 fs.writeFile(localtion + cssName, rst.frontCss, (errMainFile) => {
                     if (errMainFile) {
                         reject(errMainFile);
